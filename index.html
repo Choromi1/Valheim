@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Valheim 데디케이트 서버 모드 적용 가이드 - r2modman 프로필 Import 방식" />
+  <meta name="theme-color" content="#0b1220" />
+  <title>Valheim 모드 적용 가이드</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#guide">본문으로 이동</a>
+
+  <header class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="hero__eyebrow">일반 유저 전용 · r2modman 프로필 Import 방식</div>
+      <h1>Valheim 모드 적용 가이드</h1>
+      <p>
+        우리 서버 접속을 위한 모드 설치 안내입니다. 공유받은 프로필을 가져온 뒤
+        <strong>Start modded</strong>로 실행하면 됩니다.
+      </p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="#guide">가이드 보기</a>
+        <button class="button button--ghost" type="button" data-copy-url>페이지 주소 복사</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="guide" class="container">
+    <section class="notice" aria-labelledby="notice-title">
+      <div>
+        <p class="section-kicker">Before Start</p>
+        <h2 id="notice-title">핵심만 먼저 확인하세요</h2>
+      </div>
+      <ul class="notice__list">
+        <li>모드는 개별 검색 설치가 아니라 <strong>프로필 Import</strong> 방식입니다.</li>
+        <li>Steam 일반 실행이 아니라 r2modman의 <strong>Start modded</strong>로 실행합니다.</li>
+        <li>문제가 생기면 Mods 탭과 오류 화면을 캡처해서 넬에게 문의하세요.</li>
+      </ul>
+    </section>
+
+    <section class="tabs" aria-label="가이드 페이지 선택">
+      <button class="tab is-active" type="button" data-page="1">
+        <span>1</span>
+        적용 가이드
+      </button>
+      <button class="tab" type="button" data-page="2">
+        <span>2</span>
+        모드 상세 설명
+      </button>
+      <button class="tab" type="button" data-page="all">
+        <span>∞</span>
+        전체 보기
+      </button>
+    </section>
+
+    <section class="toolbar" aria-label="이미지 조작">
+      <div class="toolbar__group">
+        <button class="icon-button" type="button" data-zoom="out" aria-label="이미지 축소">−</button>
+        <button class="icon-button" type="button" data-zoom="reset">100%</button>
+        <button class="icon-button" type="button" data-zoom="in" aria-label="이미지 확대">＋</button>
+      </div>
+      <div class="toolbar__group">
+        <a class="button button--small" href="./assets/page-1-install-guide.png" download>1장 다운로드</a>
+        <a class="button button--small" href="./assets/page-2-mod-details.png" download>2장 다운로드</a>
+      </div>
+    </section>
+
+    <section class="guide-grid" data-view="1">
+      <article class="guide-card" data-guide-page="1">
+        <div class="guide-card__header">
+          <div>
+            <p class="section-kicker">Page 1</p>
+            <h2>모드 적용 가이드</h2>
+          </div>
+          <button class="button button--small button--ghost" type="button" data-open-image="./assets/page-1-install-guide.png">
+            크게 보기
+          </button>
+        </div>
+        <div class="image-frame">
+          <img src="./assets/page-1-install-guide.png" alt="Valheim 모드 적용 가이드 1페이지. r2modman 설치, Valheim 선택, 프로필 Import, Start modded 실행 방법 안내" loading="eager" />
+        </div>
+      </article>
+
+      <article class="guide-card" data-guide-page="2" hidden>
+        <div class="guide-card__header">
+          <div>
+            <p class="section-kicker">Page 2</p>
+            <h2>적용 모드 상세 설명</h2>
+          </div>
+          <button class="button button--small button--ghost" type="button" data-open-image="./assets/page-2-mod-details.png">
+            크게 보기
+          </button>
+        </div>
+        <div class="image-frame">
+          <img src="./assets/page-2-mod-details.png" alt="Valheim 적용 모드 상세 설명 2페이지. 필수, Azumatt, 생존 편의, 인벤토리 UI, 전투 레이드, 지도 탐험 모드 설명" loading="lazy" />
+        </div>
+      </article>
+    </section>
+
+    <section class="quick-help" aria-labelledby="help-title">
+      <div class="quick-help__card">
+        <p class="section-kicker">Install Flow</p>
+        <h2 id="help-title">설치 흐름</h2>
+        <ol>
+          <li>r2modman 설치</li>
+          <li>Valheim 선택</li>
+          <li>Import / Update에서 넬이 공유한 프로필 가져오기</li>
+          <li>Mods 탭에서 Enabled 상태 확인</li>
+          <li>Start modded로 실행</li>
+        </ol>
+      </div>
+      <div class="quick-help__card quick-help__card--accent">
+        <p class="section-kicker">Help</p>
+        <h2>문제가 발생했다면?</h2>
+        <p>적용에 어려움이 있다면 넬에게 문의하세요!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>즐거운 발헤임 라이프 되세요! ⚔️</p>
+  </footer>
+
+  <dialog class="modal" data-modal>
+    <div class="modal__bar">
+      <strong>이미지 크게 보기</strong>
+      <button class="icon-button" type="button" data-close-modal aria-label="닫기">×</button>
+    </div>
+    <img src="" alt="선택한 가이드 이미지 확대 보기" data-modal-image />
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite" data-toast hidden>복사되었습니다.</div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
