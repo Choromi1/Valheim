@@ -67,7 +67,7 @@ strong { font-weight: 950; }
 }
 .hero__inner {
   position: relative;
-  width: min(1180px, calc(100% - 32px));
+  width: min(1500px, calc(100% - 32px));
   margin: 0 auto;
   padding: 72px 0 64px;
 }
@@ -111,7 +111,7 @@ strong { font-weight: 950; }
 }
 
 .container {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1500px, calc(100% - 32px));
   margin: 0 auto;
   padding: 34px 0 56px;
 }
@@ -307,7 +307,7 @@ strong { font-weight: 950; }
   background: #07101f;
 }
 .image-frame img {
-  width: calc(100% * var(--zoom));
+  width: min(calc(100% * var(--zoom)), 2200px);
   max-width: none;
   min-width: min(100%, 360px);
   height: auto;
@@ -394,7 +394,7 @@ strong { font-weight: 950; }
 
 @media (max-width: 560px) {
   .hero__inner,
-  .container { width: min(100% - 20px, 1180px); }
+  .container { width: min(100% - 20px, 1500px); }
   .hero__inner { padding: 48px 0 42px; }
   .notice,
   .profile-code,
