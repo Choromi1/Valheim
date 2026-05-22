@@ -3,136 +3,213 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Valheim 데디케이트 서버 모드 적용 가이드 - r2modman 프로필 Import 방식" />
-  <meta name="theme-color" content="#0b1220" />
-  <title>Valheim 모드 적용 가이드</title>
+  <title>발헤임 모드 적용 가이드</title>
+  <meta name="description" content="발헤임 서버 접속을 위한 r2modman 프로필 Import 및 모드 설명 가이드" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#guide">본문으로 이동</a>
-
   <header class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__inner">
-      <div class="hero__eyebrow">일반 유저 전용 · r2modman 프로필 Import 방식</div>
-      <h1>Valheim 모드 적용 가이드</h1>
-      <p>
-        우리 서버 접속을 위한 모드 설치 안내입니다. 공유받은 프로필을 가져온 뒤
-        <strong>Start modded</strong>로 실행하면 됩니다.
+      <p class="eyebrow">Valheim Dedicated Server</p>
+      <h1>발헤임 모드 적용 가이드</h1>
+      <p class="hero__desc">
+        이 가이드는 우리 서버 접속을 위한 일반 유저용 안내입니다.
+        모드는 하나씩 설치하지 않고, 공유받은 <strong>r2modman 프로필 코드</strong>로 가져옵니다.
       </p>
       <div class="hero__actions">
-        <a class="button button--primary" href="#guide">가이드 보기</a>
-        <button class="button button--ghost" type="button" data-copy-url>페이지 주소 복사</button>
+        <a class="button button--primary" href="#install">적용 가이드 보기</a>
+        <a class="button button--ghost" href="#mods">모드 설명 보기</a>
       </div>
     </div>
   </header>
 
-  <main id="guide" class="container">
-    <section class="notice" aria-labelledby="notice-title">
-      <div>
-        <p class="section-kicker">Before Start</p>
-        <h2 id="notice-title">핵심만 먼저 확인하세요</h2>
+  <main class="page">
+    <section id="install" class="guide-panel">
+      <div class="panel-title">
+        <div>
+          <p class="page-num">1 / 2</p>
+          <h2>적용 전 준비 및 프로필 Import</h2>
+        </div>
+        <p class="panel-title__desc">아래 순서대로 진행하면 모드를 한 번에 적용할 수 있습니다.</p>
       </div>
-      <ul class="notice__list">
-        <li>모드는 개별 검색 설치가 아니라 <strong>프로필 Import</strong> 방식입니다.</li>
-        <li>Steam 일반 실행이 아니라 r2modman의 <strong>Start modded</strong>로 실행합니다.</li>
-        <li>문제가 생기면 Mods 탭과 오류 화면을 캡처해서 넬에게 문의하세요.</li>
-      </ul>
-    </section>
 
-    <section class="tabs" aria-label="가이드 페이지 선택">
-      <button class="tab is-active" type="button" data-page="1">
-        <span>1</span>
-        적용 가이드
-      </button>
-      <button class="tab" type="button" data-page="2">
-        <span>2</span>
-        모드 상세 설명
-      </button>
-      <button class="tab" type="button" data-page="all">
-        <span>∞</span>
-        전체 보기
-      </button>
-    </section>
+      <section class="notice-card">
+        <h3>프로필 코드 입력 영역</h3>
+        <p>넬이 공유한 r2modman 프로필 코드를 아래 영역에 넣어두면 됩니다.</p>
+        <div class="code-box" aria-label="r2modman 프로필 코드">
+          <code id="profileCode">여기에 r2modman 프로필 코드를 입력하세요</code>
+          <button type="button" id="copyCodeBtn" class="copy-button">코드 복사</button>
+        </div>
+        <p class="hint">
+          GitHub에 올리기 전 <strong>index.html</strong>에서 위 문구를 실제 코드로 바꾸면 됩니다.
+        </p>
+      </section>
 
-    <section class="toolbar" aria-label="이미지 조작">
-      <div class="toolbar__group">
-        <button class="icon-button" type="button" data-zoom="out" aria-label="이미지 축소">−</button>
-        <button class="icon-button" type="button" data-zoom="reset">100%</button>
-        <button class="icon-button" type="button" data-zoom="in" aria-label="이미지 확대">＋</button>
-      </div>
-      <div class="toolbar__group">
-        <a class="button button--small" href="./assets/page-1-install-guide.png" download>1장 다운로드</a>
-        <a class="button button--small" href="./assets/page-2-mod-details.png" download>2장 다운로드</a>
-      </div>
-    </section>
+      <section class="step-section">
+        <h3>진행 순서</h3>
+        <div class="step-grid">
+          <article class="step-card">
+            <span class="step-number">1</span>
+            <h4>Valheim 1회 실행</h4>
+            <p>Steam에서 발헤임을 한 번 실행해서 기본 폴더를 생성합니다.</p>
+          </article>
 
-    <section class="guide-grid" data-view="1">
-      <article class="guide-card" data-guide-page="1">
-        <div class="guide-card__header">
-          <div>
-            <p class="section-kicker">Page 1</p>
-            <h2>모드 적용 가이드</h2>
+          <article class="step-card">
+            <span class="step-number">2</span>
+            <h4>r2modman 설치</h4>
+            <p>Thunderstore에서 r2modman을 설치하고 실행합니다.</p>
+            <a href="https://thunderstore.io/package/ebkr/r2modman/" target="_blank" rel="noreferrer">r2modman 페이지 열기</a>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">3</span>
+            <h4>Valheim 선택</h4>
+            <p><strong>Valheim Dedicated Server</strong>가 아니라 <strong>Valheim</strong>을 선택합니다.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">4</span>
+            <h4>Import / Update</h4>
+            <p>프로필 화면에서 <strong>Import / Update</strong>를 클릭합니다.</p>
+          </article>
+
+          <article class="step-card step-card--focus">
+            <span class="step-number">5</span>
+            <h4>From code 선택</h4>
+            <p><strong>Import new profile → From code</strong>를 선택하고, 위 프로필 코드를 붙여넣습니다.</p>
+          </article>
+
+          <article class="step-card">
+            <span class="step-number">6</span>
+            <h4>Start modded 실행</h4>
+            <p>모드 설치가 끝나면 <strong>Start modded</strong>로 실행합니다. Steam 일반 실행은 사용하지 않습니다.</p>
+          </article>
+        </div>
+        <p class="success-line">게임 실행 후 문제가 없다면 정상 적용 완료!</p>
+      </section>
+
+      <section class="nexus-section">
+        <div class="section-header">
+          <h3>비주얼 모드 설치 방법 · Nexus Mods</h3>
+          <p>셰이더/텍스처 계열은 프로필 Import에 포함되지 않을 수 있어 별도 설치가 필요합니다.</p>
+        </div>
+
+        <div class="nexus-layout">
+          <div class="nexus-card nexus-card--brand">
+            <strong>NEXUSMODS</strong>
+            <span>https://www.nexusmods.com/valheim</span>
           </div>
-          <button class="button button--small button--ghost" type="button" data-open-image="./assets/page-1-install-guide.png">
-            크게 보기
-          </button>
-        </div>
-        <div class="image-frame">
-          <img src="./assets/page-1-install-guide.png" alt="Valheim 모드 적용 가이드 1페이지. r2modman 설치, Valheim 선택, 프로필 Import, Start modded 실행 방법 안내" loading="eager" />
-        </div>
-      </article>
-
-      <article class="guide-card" data-guide-page="2" hidden>
-        <div class="guide-card__header">
-          <div>
-            <p class="section-kicker">Page 2</p>
-            <h2>적용 모드 상세 설명</h2>
+          <div class="mini-steps">
+            <div><span>1</span>Nexus Mods 접속</div>
+            <div><span>2</span>비주얼 모드 다운로드</div>
+            <div><span>3</span>압축 해제</div>
+            <div><span>4</span>안내 경로에 복사</div>
+            <div><span>5</span>Start modded 실행</div>
           </div>
-          <button class="button button--small button--ghost" type="button" data-open-image="./assets/page-2-mod-details.png">
-            크게 보기
-          </button>
         </div>
-        <div class="image-frame">
-          <img src="./assets/page-2-mod-details.png" alt="Valheim 적용 모드 상세 설명 2페이지. 필수, Azumatt, 생존 편의, 인벤토리 UI, 전투 레이드, 지도 탐험 모드 설명" loading="lazy" />
-        </div>
-      </article>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="info-box info-box--warning">
+          <h3>주의사항</h3>
+          <ul>
+            <li>모든 유저는 반드시 같은 프로필을 사용해야 합니다.</li>
+            <li>모드를 추가/삭제하거나 버전을 변경하면 접속이 불가능할 수 있습니다.</li>
+            <li>비주얼 모드는 유저마다 다르게 적용 가능하며 서버 영향이 없습니다.</li>
+            <li>문제가 생기면 모드를 삭제하지 말고 먼저 문의해주세요.</li>
+          </ul>
+        </article>
+
+        <article class="info-box info-box--contact">
+          <h3>문제가 발생했다면?</h3>
+          <p>적용에 어려움이 있거나 오류가 발생하면</p>
+          <strong>넬에게 문의하세요!</strong>
+        </article>
+      </section>
     </section>
 
-    <section class="quick-help" aria-labelledby="help-title">
-      <div class="quick-help__card">
-        <p class="section-kicker">Install Flow</p>
-        <h2 id="help-title">설치 흐름</h2>
-        <ol>
-          <li>r2modman 설치</li>
-          <li>Valheim 선택</li>
-          <li>Import / Update에서 초로미가 공유한 프로필 가져오기</li>
-          <li>Mods 탭에서 Enabled 상태 확인</li>
-          <li>Start modded로 실행</li>
-        </ol>
+    <section id="mods" class="guide-panel">
+      <div class="panel-title">
+        <div>
+          <p class="page-num">2 / 2</p>
+          <h2>적용 모드 상세 설명</h2>
+        </div>
+        <p class="panel-title__desc">프로필에 포함되는 모드와 역할입니다.</p>
       </div>
-      <div class="quick-help__card quick-help__card--accent">
-        <p class="section-kicker">Help</p>
-        <h2>문제가 발생했다면?</h2>
-        <p>적용에 어려움이 있다면 초로미에게 문의하세요!</p>
+
+      <div class="mod-columns">
+        <section class="mod-group mod-group--core">
+          <h3>필수 & 코어</h3>
+          <div class="mod-list">
+            <div class="mod-item"><strong>BepInExPack_Valheim</strong><span>모드 실행에 필요한 핵심 프레임워크입니다.</span></div>
+            <div class="mod-item"><strong>Jotunn</strong><span>여러 모드 개발에 필요한 라이브러리입니다.</span></div>
+            <div class="mod-item"><strong>YamlDotNet</strong><span>YAML 설정 파일을 읽기 위한 라이브러리입니다.</span></div>
+          </div>
+        </section>
+
+        <section class="mod-group mod-group--azu">
+          <h3>Azumatt 편의 모드</h3>
+          <div class="mod-list">
+            <div class="mod-item"><strong>AzuCraftyBoxes</strong><span>상자 재료를 바로 제작에 활용할 수 있습니다.</span></div>
+            <div class="mod-item"><strong>AzuAutoStore</strong><span>주변 상자에 아이템을 자동 정리합니다.</span></div>
+            <div class="mod-item"><strong>AzuExtendedPlayerInventory</strong><span>인벤토리와 장비 슬롯 편의성을 확장합니다.</span></div>
+            <div class="mod-item"><strong>SleepSkip</strong><span>다른 유저가 잠든 상태를 반영해 밤을 넘길 수 있습니다.</span></div>
+            <div class="mod-item"><strong>Where_You_At</strong><span>지도에 플레이어 위치를 공유합니다.</span></div>
+            <div class="mod-item"><strong>Recycle_N_Reclaim</strong><span>아이템/구조물을 회수하거나 재활용합니다.</span></div>
+            <div class="mod-item"><strong>AzuAreaRepair</strong><span>망치 수리 시 주변 건축물을 함께 수리합니다.</span></div>
+          </div>
+        </section>
+
+        <section class="mod-group mod-group--utility">
+          <h3>기능 확장</h3>
+          <div class="mod-list">
+            <div class="mod-item"><strong>PlantEverything</strong><span>거의 모든 곳에 작물을 심을 수 있게 해줍니다.</span></div>
+            <div class="mod-item"><strong>TeleportEverything</strong><span>아이템/생물/플레이어 텔레포트 기능을 확장합니다.</span></div>
+            <div class="mod-item"><strong>FastTeleport</strong><span>포탈/던전 이동 시간을 단축하고 로딩을 개선합니다.</span></div>
+            <div class="mod-item"><strong>FloorsAreRoofs</strong><span>바닥 타일을 지붕처럼 인식해 건축 편의성을 높입니다.</span></div>
+          </div>
+        </section>
+
+        <section class="mod-group mod-group--survival">
+          <h3>전투 & 생존</h3>
+          <div class="mod-list">
+            <div class="mod-item"><strong>Custom_Raids</strong><span>다양한 커스텀 레이드 이벤트를 추가합니다.</span></div>
+            <div class="mod-item"><strong>Deathlink</strong><span>사망 관련 기능을 조정합니다.</span></div>
+            <div class="mod-item"><strong>SkilledCarryWeight</strong><span>스킬 레벨에 따라 최대 소지 무게가 증가합니다.</span></div>
+          </div>
+        </section>
+
+        <section class="mod-group mod-group--ui">
+          <h3>인벤토리 & UI</h3>
+          <div class="mod-list">
+            <div class="mod-item"><strong>ItemStacksItemWeights</strong><span>아이템 스택 수와 무게 정보를 조정합니다.</span></div>
+            <div class="mod-item"><strong>Quick_Stack_Store_Sort_Trash_Restock</strong><span>빠른 저장/정리/버리기/재보충 기능을 제공합니다.</span></div>
+            <div class="mod-item"><strong>MyLittleUI</strong><span>UI를 개선하고 유용한 정보를 표시합니다.</span></div>
+            <div class="mod-item"><strong>EmoteWheelReworked</strong><span>감정표현 휠 메뉴를 더 편하게 사용할 수 있습니다.</span></div>
+          </div>
+        </section>
+
+        <section class="mod-group mod-group--map">
+          <h3>지도 & 탐험</h3>
+          <div class="mod-list">
+            <div class="mod-item"><strong>BetterCartographyTable</strong><span>지도 제작대 기능을 확장하고 다양한 설정을 제공합니다.</span></div>
+          </div>
+        </section>
       </div>
+
+      <section class="summary-box">
+        <h3>알아두세요!</h3>
+        <ul>
+          <li>모든 유저는 서버 클라이언트가 동일한 모드와 버전을 사용해야 정상 작동합니다.</li>
+          <li>모드를 임의로 추가/삭제하거나 버전을 변경하면 접속이 불가능할 수 있습니다.</li>
+          <li>새로운 모드가 추가되면 서버에서 새로운 프로필 코드를 제공할 예정입니다.</li>
+        </ul>
+        <p>적용에 어려움이 있다면 <strong>넬에게 문의하세요!</strong></p>
+      </section>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>즐거운 발헤임 라이프 되세요! ⚔️</p>
-  </footer>
-
-  <dialog class="modal" data-modal>
-    <div class="modal__bar">
-      <strong>이미지 크게 보기</strong>
-      <button class="icon-button" type="button" data-close-modal aria-label="닫기">×</button>
-    </div>
-    <img src="" alt="선택한 가이드 이미지 확대 보기" data-modal-image />
-  </dialog>
-
-  <div class="toast" role="status" aria-live="polite" data-toast hidden>복사되었습니다.</div>
-
+  <button class="top-button" type="button" id="topButton" aria-label="맨 위로 이동">↑</button>
   <script src="./script.js"></script>
 </body>
 </html>

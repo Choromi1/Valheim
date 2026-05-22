@@ -1,25 +1,28 @@
-# Valheim 모드 적용 가이드 GitHub Pages
+# Valheim Mod Guide
 
-## 파일 구성
+GitHub Pages 배포용 정적 웹페이지입니다.
+
+## 파일 구조
 
 ```text
 index.html
 styles.css
 script.js
-assets/
-  page-1-install-guide.png
-  page-2-mod-details.png
+README.md
 ```
 
-## GitHub Pages 배포 방법
+## 프로필 코드 넣는 곳
 
-1. GitHub에서 새 Repository 생성
-2. 위 파일들을 Repository 루트에 업로드
-3. Repository의 Settings → Pages 이동
-4. Build and deployment에서 Source를 `Deploy from a branch`로 선택
-5. Branch를 `main`, Folder를 `/root`로 선택 후 Save
-6. 표시되는 GitHub Pages URL로 접속
+`index.html`에서 아래 문구를 찾은 뒤 실제 r2modman 프로필 코드로 교체하세요.
 
-## 업데이트 방법
+```html
+여기에 r2modman 프로필 코드를 입력하세요
+```
 
-가이드 이미지가 바뀌면 `assets/page-1-install-guide.png`, `assets/page-2-mod-details.png` 파일만 같은 이름으로 교체하면 됩니다.
+## GitHub Pages 설정
+
+1. 저장소 루트에 파일 업로드
+2. Settings → Pages
+3. Source: Deploy from a branch
+4. Branch: main / root
+5. Save
