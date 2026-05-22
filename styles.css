@@ -237,6 +237,78 @@ strong { font-weight: 950; }
   overflow-wrap: anywhere;
 }
 
+.visual-downloads {
+  margin-top: 20px;
+  padding: 26px;
+  border: 1px solid rgba(196, 181, 253, 0.95);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #faf5ff, #ffffff 58%, #f0f9ff);
+  box-shadow: 0 14px 46px rgba(0, 0, 0, .18);
+}
+.visual-downloads__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+.visual-downloads__head h2 {
+  margin: 4px 0 0;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+.visual-downloads__head p:last-child {
+  margin: 12px 0 0;
+  color: #475569;
+  font-weight: 700;
+}
+.button--nexus {
+  color: white;
+  background: #7c3aed;
+  white-space: nowrap;
+}
+.button--nexus:hover { background: #6d28d9; }
+.visual-downloads__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.visual-card {
+  display: grid;
+  gap: 8px;
+  min-height: 150px;
+  padding: 18px;
+  border: 1px solid #ddd6fe;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #0f172a;
+  text-decoration: none;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.visual-card:hover {
+  transform: translateY(-2px);
+  border-color: #a78bfa;
+  box-shadow: 0 16px 38px rgba(76, 29, 149, .14);
+}
+.visual-card strong {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+.visual-card span:last-child {
+  color: #475569;
+  font-weight: 750;
+}
+.visual-card__badge {
+  width: fit-content;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #6d28d9;
+  font-size: .78rem;
+  font-weight: 950;
+}
+
 .tabs {
   display: flex;
   gap: 10px;
@@ -384,7 +456,9 @@ strong { font-weight: 950; }
   .notice,
   .profile-code,
   .quick-help,
-  .guide-grid[data-view="all"] { grid-template-columns: 1fr; }
+  .guide-grid[data-view="all"],
+  .visual-downloads__grid { grid-template-columns: 1fr; }
+  .visual-downloads__head { flex-direction: column; }
   .toolbar,
   .guide-card__header { align-items: stretch; flex-direction: column; }
   .toolbar__group { justify-content: center; }
@@ -398,6 +472,7 @@ strong { font-weight: 950; }
   .hero__inner { padding: 48px 0 42px; }
   .notice,
   .profile-code,
+  .visual-downloads,
   .quick-help,
   .guide-card__header { padding: 18px; }
   .image-frame { padding: 10px; }
