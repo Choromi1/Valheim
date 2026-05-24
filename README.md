@@ -12,3 +12,6 @@ README.md
 ```
 
 GitHub 저장소 루트에 그대로 업로드한 뒤, Pages 설정에서 `main` / `/root`를 선택하세요.
+
+
+Update: v4 uses the portrait Valheim key art in a split hero layout.
