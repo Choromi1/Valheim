@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valheim 서버 모드 가이드</title>
-  <meta name="description" content="발헤임 서버 일반 유저용 r2modman 프로필 Import, 실제 설정값, 모드 설명 가이드" />
-  <link rel="stylesheet" href="./styles.css?v=11" />
+  <meta name="description" content="발헤임 서버 일반 유저용 r2modman 프로필 Import 및 모드 설명 가이드" />
+  <link rel="stylesheet" href="./styles.css?v=12" />
 </head>
 <body>
   <header class="hero">
@@ -13,12 +13,12 @@
       <div>
         <p class="eyebrow">Valheim Dedicated Server Guide</p>
         <h1>발헤임 서버<br/>모드 적용 가이드</h1>
-        <p class="hero__lead">업로드한 config 기준으로 실제 적용값을 설명하는 HTML 카드형 안내입니다. 모드 아이콘, 검색, 카테고리 필터, 비주얼 패치 설치 위치를 포함했습니다.</p>
+        <p class="hero__lead">일반 유저는 모드를 하나씩 설치하지 않고, 넬이 공유한 r2modman 프로필 코드를 가져와 한 번에 맞춥니다.</p>
       </div>
       <aside class="hero__panel">
         <strong>일반 유저용</strong>
         <span>r2modman 프로필 코드 Import 방식</span>
-        <span class="hero__count">24개 기능/커스텀 모드 + 6개 비주얼 패치</span>
+        <span class="hero__count">24개 기능 모드 + 3개 비주얼 패치</span>
       </aside>
     </div>
   </header>
@@ -60,15 +60,18 @@
       <div class="section-head">
         <div>
           <p class="section-kicker">Visual Patch Links</p>
-          <h2>비주얼 모드 다운로드 및 설치 위치</h2>
-          <p>비주얼 패치는 선택 설치입니다. 아래 경로는 r2modman의 <strong>Settings → Browse profile folder</strong>로 연 프로필 폴더 기준입니다.</p>
+          <h2>비주얼 모드 다운로드 사이트</h2>
+          <p>계절 관련 모드는 r2modman 프로필에 포함하는 쪽으로 정리하고, Nexus 별도 설치 항목은 아래 3개만 남겼습니다.</p>
         </div>
         <a class="button button--nexus" href="https://www.nexusmods.com/valheim" target="_blank" rel="noreferrer">Nexus Valheim 열기</a>
       </div>
       <div class="visual-grid" id="visualGrid"></div>
-      <div class="notice">
-        <strong>설치 주의</strong>
-        <p>셰이더/텍스처 파일은 r2modman 프로필 코드에 포함되지 않을 수 있습니다. 모드 페이지 설명 또는 넬이 안내한 경로에 맞춰 복사하세요.</p>
+      <div class="install-example">
+        <div>
+          <h3>비주얼 모드 설치 위치 예시</h3>
+          <p>긴 경로를 직접 입력하지 말고, r2modman에서 <strong>Settings → Browse profile folder</strong>로 프로필 폴더를 연 뒤 이미지 흐름대로 배치하세요.</p>
+        </div>
+        <img src="./assets/visual-install-example.svg" alt="비주얼 모드 설치 위치 예시" />
       </div>
     </section>
 
@@ -76,8 +79,8 @@
       <div class="section-head">
         <div>
           <p class="section-kicker">Mod Details</p>
-          <h2>적용 모드 상세 설명 · 실제 설정값 기준</h2>
-          <p>업로드한 config.zip을 기준으로 유저가 체감할 핵심 설정값을 정리했습니다. 각 카드의 “설정값 보기”를 누르면 실제 적용값이 펼쳐집니다.</p>
+          <h2>적용 모드 상세 설명</h2>
+          <p>모드 아이콘, 역할, 실제 설정 기반 유저 체감을 카드로 정리했습니다. 설정 펼침 UI는 제거했습니다.</p>
         </div>
         <a class="button button--dark" href="https://thunderstore.io/c/valheim/" target="_blank" rel="noreferrer">Thunderstore Valheim 열기</a>
       </div>
@@ -85,7 +88,7 @@
       <div class="toolbar">
         <label class="search">
           <span>검색</span>
-          <input id="modSearch" type="search" placeholder="예: 상자, 포탈, 사망, 캐릭터, 무게" />
+          <input id="modSearch" type="search" placeholder="예: 지도, Azu, 포탈, 무게" />
         </label>
         <div class="category-tabs" id="categoryTabs"></div>
       </div>
@@ -111,7 +114,7 @@
   <footer class="footer">
     <div class="container">
       <strong>Valheim 서버 모드 가이드</strong>
-      <span>config.zip 기준 생성 · GitHub Pages 정적 웹페이지용</span>
+      <span>GitHub Pages 정적 웹페이지용</span>
     </div>
   </footer>
 
@@ -125,7 +128,6 @@
       "필수",
       "로더"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/denikson-BepInExPack_Valheim-5.4.2333.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/denikson/BepInExPack_Valheim/",
     "desc": "발헤임 모드를 불러오기 위한 기본 모드 로더입니다.",
     "effect": "일반 유저가 직접 건드릴 설정은 거의 없습니다. 다른 모드들이 정상적으로 로드되는 기반입니다.",
@@ -142,6 +144,10 @@
         "유저 안내",
         "프로필에 포함되어 있으면 별도 조작 불필요"
       ]
+    ],
+    "iconPath": "./assets/icons/denikson-BepInExPack_Valheim.png",
+    "settingSummary": [
+      "로그: 콘솔/디스크 로그 활성화"
     ]
   },
   {
@@ -152,7 +158,6 @@
       "의존성",
       "라이브러리"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/ValheimModding-Jotunn-2.24.3.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/ValheimModding/Jotunn/",
     "desc": "여러 발헤임 모드가 공통으로 사용하는 모딩 라이브러리입니다.",
     "effect": "기능 모드가 요구하는 기반 라이브러리입니다. 유저가 직접 조작할 기능은 거의 없습니다.",
@@ -165,7 +170,9 @@
         "유저 안내",
         "프로필에 포함되어 있으면 그대로 유지"
       ]
-    ]
+    ],
+    "iconPath": "./assets/icons/ValheimModding-Jotunn.png",
+    "settingSummary": []
   },
   {
     "id": "ValheimModding-YamlDotNet",
@@ -175,7 +182,6 @@
       "의존성",
       "YAML"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/ValheimModding-YamlDotNet-16.3.1.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/ValheimModding/YamlDotNet/",
     "desc": "YAML 설정 파일을 읽는 데 필요한 의존성 모드입니다.",
     "effect": "Custom Raids, Azu 계열 YAML 설정을 읽기 위한 보조 구성요소입니다.",
@@ -188,7 +194,9 @@
         "유저 안내",
         "삭제하면 YAML 기반 모드가 깨질 수 있음"
       ]
-    ]
+    ],
+    "iconPath": "./assets/icons/ValheimModding-YamlDotNet.png",
+    "settingSummary": []
   },
   {
     "id": "Azumatt-AzuCraftyBoxes",
@@ -199,7 +207,6 @@
       "상자",
       "QoL"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuCraftyBoxes-1.8.14.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuCraftyBoxes/",
     "desc": "제작/건축 시 주변 상자의 재료를 자동으로 참조합니다.",
     "effect": "재료를 손에 들고 있지 않아도 20m 범위의 보관함 재료를 사용해 제작할 수 있습니다.",
@@ -232,6 +239,12 @@
         "Fill All 보조키",
         "LeftShift"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuCraftyBoxes.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "모드 활성화: On",
+      "상자 참조 범위: Container Range = 20"
     ]
   },
   {
@@ -243,7 +256,6 @@
       "상자",
       "자동보관"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuAutoStore-3.0.14.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuAutoStore/",
     "desc": "떨어진 아이템 또는 인벤토리 아이템을 주변 상자로 자동 정리합니다.",
     "effect": "마침표(.)로 주변 5m 상자에 빠르게 보관하고, 이미 같은 아이템이 있는 상자 위주로 정리됩니다.",
@@ -300,6 +312,12 @@
         "즐겨찾기 보조키",
         "Z"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuAutoStore.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "드롭 아이템 자동 수집: Chests Pickup From Ground = On",
+      "기존 아이템 있는 상자 기준: Must Have Existing Item To Pull = On"
     ]
   },
   {
@@ -363,6 +381,12 @@
         "Quick Trash 확인창",
         "On"
       ]
+    ],
+    "iconPath": "./assets/icons/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock.png",
+    "settingSummary": [
+      "빠른 보관 범위: QuickStackToNearbyRange = 10",
+      "빠른 보관 단축키: P",
+      "핫바 보관 제외: QuickStackIncludesHotkeyBar = false"
     ]
   },
   {
@@ -374,7 +398,6 @@
       "재활용",
       "회수"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-Recycle_N_Reclaim-1.3.14.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/Recycle_N_Reclaim/",
     "desc": "아이템을 재활용하거나 제작 재료 일부를 회수할 수 있습니다.",
     "effect": "회수 탭/컨테이너 회수를 통해 제작 재료의 50%를 돌려받습니다. 인벤토리 직접 재활용은 관리자 잠금입니다.",
@@ -411,6 +434,12 @@
         "되돌리기",
         "Ctrl + Z, 20초"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-Recycle_N_Reclaim.png",
+    "settingSummary": [
+      "인벤토리 재활용: Enabled = On / Lock to Admin = On",
+      "회수율: RecyclingRate = 0.5",
+      "정확한 제작대 필요: RequireExactCraftingStationForRecycling = On"
     ]
   },
   {
@@ -422,7 +451,6 @@
       "건축",
       "QoL"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuAreaRepair-1.1.6.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuAreaRepair/",
     "desc": "망치 수리 기능을 범위 수리로 확장합니다.",
     "effect": "망치로 수리할 때 주변 15m 구조물을 함께 수리해 기지 보수가 빨라집니다.",
@@ -443,6 +471,12 @@
         "수리 반경",
         "15m"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuAreaRepair.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "범위 수리: On",
+      "수리 반경: 15m"
     ]
   },
   {
@@ -454,7 +488,6 @@
       "장비슬롯",
       "퀵슬롯"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuExtendedPlayerInventory-2.4.1.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuExtendedPlayerInventory/",
     "desc": "인벤토리, 장비 슬롯, 퀵슬롯을 확장합니다.",
     "effect": "인벤토리가 2줄 늘어나고, 장비칸/퀵슬롯 4개/위시본·위습라이트 전용 슬롯을 사용할 수 있습니다.",
@@ -495,6 +528,12 @@
         "퀵슬롯 키",
         "Alt+Z, Alt+X, Alt+C, Alt+V"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuExtendedPlayerInventory.png",
+    "settingSummary": [
+      "추가 인벤토리 줄: 2줄",
+      "장비 전용 행: On",
+      "장비 별도 패널: On"
     ]
   },
   {
@@ -533,6 +572,12 @@
         "원래 스택 보기",
         "LeftAlt"
       ]
+    ],
+    "iconPath": "./assets/icons/shudnal-ItemStacksItemWeights.png",
+    "settingSummary": [
+      "서버 설정 잠금: true",
+      "전역 스택 배율: 2배",
+      "전역 무게 배율: 0.85배"
     ]
   },
   {
@@ -580,6 +625,12 @@
         "카트 부착 거리",
         "5m"
       ]
+    ],
+    "iconPath": "./assets/icons/Searica-SkilledCarryWeight.png",
+    "settingSummary": [
+      "적용 스킬: Jump, Pickaxes, Ride, Run, Sneak, Swim, WoodCutting",
+      "스킬 계수: 0.25",
+      "카트 무게 영향: On"
     ]
   },
   {
@@ -635,6 +686,12 @@
         "수리",
         "홀드 수리 On"
       ]
+    ],
+    "iconPath": "./assets/icons/shudnal-MyLittleUI.png",
+    "settingSummary": [
+      "서버 설정 잠금: true",
+      "상자 이름/내용 표시: On / 11줄",
+      "제련기 정보: 예상 시간, 연료, 대기열 표시"
     ]
   },
   {
@@ -690,6 +747,12 @@
         "운반 비용",
         "10 / 용의 알은 비용 제외"
       ]
+    ],
+    "iconPath": "./assets/icons/OdinPlus-TeleportEverything.png",
+    "settingSummary": [
+      "모드 활성화: true",
+      "서버 설정 강제: true",
+      "포탈 활성 범위: 5m"
     ]
   },
   {
@@ -721,6 +784,12 @@
         "포탈 소용돌이 숨김",
         "false"
       ]
+    ],
+    "iconPath": "./assets/icons/GemHunter1-FastTeleport.png",
+    "settingSummary": [
+      "모드 활성화: true",
+      "카메라 암전 제거: false",
+      "포탈 소용돌이 숨김: false"
     ]
   },
   {
@@ -755,6 +824,12 @@
         "와드 안에서 끄기",
         "Off"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-Where_You_At.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "공개 토글 방지: On",
+      "관리자 예외: On"
     ]
   },
   {
@@ -782,6 +857,10 @@
         "유저 안내",
         "지도 공유 관련 기능은 서버에서 테스트 후 필요 시 설정 추가"
       ]
+    ],
+    "iconPath": "./assets/icons/nbusseneau-Better_Cartography_Table.png",
+    "settingSummary": [
+      "적용 방식: 프로필 포함 / 기본 설정 사용"
     ]
   },
   {
@@ -841,6 +920,12 @@
         "나무 성장 시간",
         "대부분 3000초"
       ]
+    ],
+    "iconPath": "./assets/icons/Advize-PlantEverything.png",
+    "settingSummary": [
+      "서버 설정 잠금: true",
+      "기타 식물/잔해: EnableMiscFlora = true / EnableDebris = true",
+      "추가 자원: false"
     ]
   },
   {
@@ -864,6 +949,10 @@
         "비 피해 제거",
         "RemoveRainDamage = true"
       ]
+    ],
+    "iconPath": "./assets/icons/NotActuallyMine-FloorsAreRoofs.png",
+    "settingSummary": [
+      "비 피해 제거: RemoveRainDamage = true"
     ]
   },
   {
@@ -910,6 +999,12 @@
         "팝업 자동 선택",
         "Ask"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-SleepSkip.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "필요 비율: 50%",
+      "최소 필요 인원: 1명"
     ]
   },
   {
@@ -961,6 +1056,12 @@
         "제작/채집/건축 보상",
         "0.8 / 0.1 / 0.5"
       ]
+    ],
+    "iconPath": "./assets/icons/MidnightMods-Deathlink.png",
+    "settingSummary": [
+      "현재 선택지: Casual",
+      "장비 보존: minEquipmentKept = 3 / maxEquipmentKept = 3",
+      "스킬 손실: 2% ~ 5%"
     ]
   },
   {
@@ -1015,6 +1116,12 @@
         "Ragnarok",
         "Enabled = false"
       ]
+    ],
+    "iconPath": "./assets/icons/ASharpPen-Custom_Raids.png",
+    "settingSummary": [
+      "기존 레이드 제거: false",
+      "동명 이벤트 덮어쓰기: true",
+      "레이드 체크 간격: 46분"
     ]
   },
   {
@@ -1061,6 +1168,12 @@
         "게임패드 키",
         "JoystickButton2"
       ]
+    ],
+    "iconPath": "./assets/icons/ValheimValkream-EmoteWheelReworked.png",
+    "settingSummary": [
+      "모드 활성화: true",
+      "단축키: T",
+      "키 놓을 때 실행: true"
     ]
   },
   {
@@ -1088,6 +1201,10 @@
         "유저 안내",
         "외형 데이터 손상 방지를 위해 참여자 전원 설치 권장"
       ]
+    ],
+    "iconPath": "./assets/icons/Balrond-balrond_character_customization.png",
+    "settingSummary": [
+      "적용 방식: 프로필에 모드 추가"
     ]
   },
   {
@@ -1099,7 +1216,6 @@
       "머리",
       "수염"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/ComfyMods-DyeHard-1.6.0.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/ComfyMods/DyeHard/",
     "desc": "캐릭터 머리/수염 타입과 색상을 클라이언트에서 조정합니다.",
     "effect": "F1 ConfigurationManager에서 DyeHard 설정을 열어 머리와 수염 색상/스타일을 바꿀 수 있습니다.",
@@ -1120,6 +1236,12 @@
         "주의",
         "외형 표시용이며 플레이어 데이터 자체를 직접 변경하지 않는 방식"
       ]
+    ],
+    "iconPath": "./assets/icons/ComfyMods-DyeHard.png",
+    "settingSummary": [
+      "적용 방식: 프로필에 모드 추가",
+      "사용 방법: F1 → ConfigurationManager → DyeHard",
+      "주의: 외형 표시용이며 플레이어 데이터 자체를 직접 변경하지 않는 방식"
     ]
   }
 ];
@@ -1127,53 +1249,26 @@
   {
     "name": "Badgers Shading Overhaul",
     "tag": "Shader",
+    "desc": "조명, 색감, 렌더링 분위기를 개선하는 선택 비주얼 패치입니다.",
     "link": "https://www.nexusmods.com/valheim/mods/2366",
-    "desc": "조명/렌더링의 거친 색 띠를 줄이고 자연스러운 분위기를 만드는 셰이더 개선 패치입니다.",
-    "install": "압축 해제 후 내용물을 r2modman 프로필의 BepInEx/plugins 폴더에 넣습니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\plugins"
+    "install": "프로필 폴더를 열고 BepInEx > plugins 안에 압축 해제 내용을 배치합니다."
   },
   {
     "name": "Willybach’s HD Valheim 2.0",
     "tag": "Texture",
+    "desc": "바닐라 느낌을 유지하면서 대부분의 텍스처를 고해상도로 개선합니다.",
     "link": "https://www.nexusmods.com/valheim/mods/1030",
-    "desc": "바닐라 분위기를 유지하면서 전반적인 텍스처를 고해상도로 바꿉니다.",
-    "install": "압축 해제 후 Custom Textures 폴더를 HDValheimTexturesData 아래에 넣습니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\plugins\\HDValheimTexturesData\\Custom Textures"
+    "install": "HDValheimTexturesData 폴더 구조를 유지해서 Custom Textures가 올바른 위치에 들어가게 배치합니다."
   },
   {
     "name": "Badgers HD Terrain 2.0",
     "tag": "Terrain",
+    "desc": "지형 텍스처와 조명, 날씨 표현을 개선하는 선택 비주얼 패치입니다.",
     "link": "https://www.nexusmods.com/valheim/mods/2887",
-    "desc": "지형 텍스처와 바이옴 블렌딩, 날씨/조명 표현을 개선합니다.",
-    "install": "압축 해제 후 ValheimHDTerrain.dll과 HDTerrainData 폴더가 BepInEx/plugins 안에 들어가게 배치합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\plugins"
-  },
-  {
-    "name": "Seasonality",
-    "tag": "Season",
-    "link": "https://thunderstore.io/c/valheim/p/RustyMods/Seasonality/",
-    "desc": "인게임 시간에 따라 계절 색감과 텍스처 변화를 적용합니다.",
-    "install": "r2modman 프로필에 기능 모드로 설치합니다. 텍스처 팩은 아래 Textures 경로에 배치합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\config\\Seasonality\\Textures"
-  },
-  {
-    "name": "Seasonality HD Texture Pack",
-    "tag": "Season Texture",
-    "link": "https://thunderstore.io/c/valheim/p/RustyMods/Seasonality_HD_Texture_Pack/",
-    "desc": "Seasonality가 사용할 HD 텍스처 팩입니다.",
-    "install": "텍스처 파일 경로가 BepInEx/config/Seasonality/Textures가 되도록 배치합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\config\\Seasonality\\Textures"
-  },
-  {
-    "name": "Willybachs HD Seasonality",
-    "tag": "Season HD",
-    "link": "https://www.nexusmods.com/valheim/mods/2635",
-    "desc": "Willybach HD Valheim과 Seasonality를 함께 쓰기 위한 계절별 HD 텍스처입니다.",
-    "install": "압축 안의 WillybachHD 텍스처 폴더를 Seasonality Textures 폴더 아래에 배치합니다. 포함된 Seasonality 설정 파일이 있다면 BepInEx/config에 적용합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\config\\Seasonality\\Textures\\WillybachHD"
+    "install": "프로필 폴더를 열고 BepInEx > plugins 안에 압축 해제 내용을 배치합니다."
   }
 ];
   </script>
-  <script src="./script.js?v=11" defer></script>
+  <script src="./script.js?v=12" defer></script>
 </body>
 </html>

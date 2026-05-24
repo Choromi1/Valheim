@@ -4,9 +4,122 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valheim 서버 모드 가이드</title>
-  <meta name="description" content="발헤임 서버 일반 유저용 r2modman 프로필 Import, 실제 설정값, 모드 설명 가이드" />
+  <meta name="description" content="발헤임 서버 일반 유저용 r2modman 프로필 Import 및 모드 설명 가이드" />
   <style>
-:root{--bg:#081326;--text:#0f172a;--muted:#64748b;--line:#dbe3ef;--blue:#2563eb;--violet:#7c3aed;--emerald:#059669;--amber:#f59e0b;--radius:24px;--radius-lg:34px;--shadow:0 20px 55px rgba(2,6,23,.16)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(37,99,235,.32),transparent 34rem),linear-gradient(180deg,#081326 0,#0f172a 34rem,#f8fafc 34rem)}a{color:inherit}.container{width:min(1500px,calc(100% - 32px));margin:0 auto}.hero{padding:52px 0 36px;color:#fff}.hero__inner{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:28px;align-items:end}.eyebrow,.section-kicker{margin:0;color:#60a5fa;font-size:.78rem;font-weight:950;letter-spacing:.18em;text-transform:uppercase}.hero h1{margin:14px 0 0;font-size:clamp(2.6rem,6vw,5.4rem);line-height:.95;letter-spacing:-.065em}.hero__lead{max-width:900px;margin:22px 0 0;color:#dbeafe;font-size:1.16rem;line-height:1.75;font-weight:650}.hero__panel{display:grid;gap:12px;padding:26px;border:1px solid rgba(255,255,255,.16);border-radius:var(--radius-lg);background:rgba(255,255,255,.1);box-shadow:0 24px 70px rgba(0,0,0,.28);backdrop-filter:blur(12px)}.hero__panel strong{font-size:1.5rem}.hero__panel span{color:#e2e8f0;font-weight:700}.hero__count{width:fit-content;padding:9px 12px;border-radius:999px;background:rgba(37,99,235,.3)}main{display:grid;gap:24px;padding:22px 0 52px}.section-card{padding:28px;border:1px solid rgba(203,213,225,.85);border-radius:var(--radius-lg);background:rgba(255,255,255,.94);box-shadow:var(--shadow)}.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:22px;margin-bottom:22px}.section-head h2,.profile-code h2,.help-section h2{margin:5px 0 0;font-size:clamp(1.65rem,3vw,2.7rem);line-height:1.12;letter-spacing:-.045em}.section-head p,.profile-code p{margin:12px 0 0;color:var(--muted);line-height:1.7;font-weight:680}.button{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border:0;border-radius:999px;color:#fff;background:var(--blue);font-weight:950;text-decoration:none;cursor:pointer;transition:.18s}.button:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(37,99,235,.25)}.button--dark{background:#0f172a;white-space:nowrap}.button--nexus{background:var(--violet);white-space:nowrap}.profile-code{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:22px;align-items:center}.code-box{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:16px;border-radius:22px;background:#0f172a}.code-box code{display:block;min-width:0;color:#dbeafe;font-weight:950;line-height:1.6;overflow-wrap:anywhere}.hint{grid-column:1/-1;margin:-6px 0 0;color:var(--muted);font-size:.94rem}.step-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}.step-card{min-height:210px;padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:#fffaf2}.step-card span{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;color:#fff;background:var(--blue);font-weight:950}.step-card h3{margin:18px 0 0;font-size:1.15rem;line-height:1.25}.step-card p{margin:10px 0 0;color:#475569;line-height:1.65;font-weight:720}.step-card--accent{background:#eff6ff;border-color:#93c5fd}.visual-section{background:linear-gradient(135deg,#faf5ff,#fff 58%,#f0f9ff)}.visual-grid,.mod-grid,.help-grid{display:grid;gap:16px}.visual-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mod-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.help-grid{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px}.visual-card,.mod-card{position:relative;display:grid;gap:12px;min-height:190px;padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;text-decoration:none;transition:.18s}.visual-card:hover,.mod-card:hover{transform:translateY(-2px);border-color:#93c5fd;box-shadow:0 18px 45px rgba(2,6,23,.13)}.visual-card h3,.mod-card h3{margin:0;font-size:1.16rem;line-height:1.28;letter-spacing:-.025em}.visual-card p,.mod-card p{margin:0;color:#475569;line-height:1.65;font-weight:680}.visual-path,.settings-table{padding:12px;border-radius:16px;background:#f8fafc;color:#334155!important;overflow-wrap:anywhere}.visual-path code{font-size:.82rem;font-weight:850}.notice{margin-top:18px;padding:18px;border:1px solid #fde68a;border-radius:22px;background:#fffbeb}.notice strong{color:#92400e}.notice p{margin:7px 0 0;color:#78350f;line-height:1.65;font-weight:700}.toolbar{display:grid;gap:16px;margin-bottom:20px}.search{display:grid;gap:7px;color:#334155;font-weight:950}.search input{width:100%;min-height:52px;padding:0 18px;border:1px solid var(--line);border-radius:18px;outline:none;font-weight:750}.search input:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.12)}.category-tabs{display:flex;flex-wrap:wrap;gap:9px}.tab{padding:10px 14px;border:1px solid var(--line);border-radius:999px;color:#334155;background:#fff;font-weight:900;cursor:pointer}.tab[aria-pressed=true]{color:#fff;background:var(--blue);border-color:var(--blue)}.badge-row{display:flex;flex-wrap:wrap;gap:7px}.badge{width:fit-content;padding:5px 9px;border-radius:999px;color:#1e40af;background:#dbeafe;font-size:.76rem;font-weight:950}.badge--violet{color:#6d28d9;background:#ede9fe}.mod-card__top{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;align-items:center}.mod-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#1d4ed8,#0f172a);display:grid;place-items:center;color:#fff;font-weight:950;font-size:1rem;overflow:hidden;box-shadow:0 10px 26px rgba(15,23,42,.16)}.mod-icon img{width:100%;height:100%;object-fit:cover}.mod-card__name small{display:block;margin-top:4px;color:var(--muted);font-size:.78rem;overflow-wrap:anywhere}.mod-card__effect{padding:12px;border-radius:16px;background:#f8fafc;color:#334155!important}.mod-card__link{margin-top:auto;color:#1d4ed8;font-weight:950}.details-btn{width:fit-content;padding:9px 12px;border:1px solid #bfdbfe;border-radius:999px;background:#eff6ff;color:#1d4ed8;font-weight:950;cursor:pointer}.settings-table{display:none}.settings-table.open{display:block}.settings-table dl{display:grid;grid-template-columns:minmax(130px,.45fr) minmax(0,1fr);gap:8px 12px;margin:0}.settings-table dt{font-weight:950;color:#0f172a}.settings-table dd{margin:0;color:#475569;font-weight:700;overflow-wrap:anywhere}.empty{padding:24px;border-radius:var(--radius);background:#f8fafc;color:var(--muted);font-weight:900;text-align:center}.help-grid article{display:grid;gap:8px;padding:20px;border-radius:var(--radius);background:#eff6ff}.help-grid strong{color:#1d4ed8}.help-grid span{color:#475569;line-height:1.65;font-weight:700}.contact{margin:20px 0 0;padding:18px;border-radius:22px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--violet));font-size:1.2rem;font-weight:950;text-align:center}.footer{padding:28px 0 44px;color:#cbd5e1;background:#081326}.footer .container{display:flex;justify-content:space-between;gap:12px}@media(max-width:1180px){.hero__inner,.profile-code{grid-template-columns:1fr}.step-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.mod-grid,.visual-grid,.help-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.container{width:min(100% - 22px,1500px)}.hero{padding-top:34px}.hero__panel{padding:20px}.section-card{padding:20px;border-radius:24px}.section-head{display:grid}.profile-code{gap:16px}.code-box{grid-template-columns:1fr}.step-grid,.mod-grid,.visual-grid,.help-grid{grid-template-columns:1fr}.step-card{min-height:unset}.settings-table dl{grid-template-columns:1fr}.footer .container{display:grid}}
+:root {
+  --bg: #081326;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --line: #dbe3ef;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --violet: #7c3aed;
+  --radius: 24px;
+  --radius-lg: 34px;
+  --shadow: 0 20px 55px rgba(2, 6, 23, .16);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, .32), transparent 34rem),
+              linear-gradient(180deg, #081326 0, #0f172a 34rem, #f8fafc 34rem);
+}
+a { color: inherit; }
+button, input { font: inherit; }
+.container { width: min(1500px, calc(100% - 32px)); margin: 0 auto; }
+.hero { padding: 52px 0 36px; color: white; }
+.hero__inner { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 28px; align-items: end; }
+.eyebrow, .section-kicker { margin: 0; color: #60a5fa; font-size: .78rem; font-weight: 950; letter-spacing: .18em; text-transform: uppercase; }
+.hero h1 { margin: 14px 0 0; font-size: clamp(2.6rem, 6vw, 5.4rem); line-height: .95; letter-spacing: -.065em; }
+.hero__lead { max-width: 820px; margin: 22px 0 0; color: #dbeafe; font-size: 1.16rem; line-height: 1.75; font-weight: 650; }
+.hero__panel { display: grid; gap: 12px; padding: 26px; border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius-lg); background: rgba(255,255,255,.1); box-shadow: 0 24px 70px rgba(0,0,0,.28); backdrop-filter: blur(12px); }
+.hero__panel strong { font-size: 1.5rem; }
+.hero__panel span { color: #e2e8f0; font-weight: 700; }
+.hero__count { width: fit-content; padding: 9px 12px; border-radius: 999px; background: rgba(37, 99, 235, .3); }
+main { display: grid; gap: 24px; padding: 22px 0 52px; }
+.section-card { padding: 28px; border: 1px solid rgba(203, 213, 225, .85); border-radius: var(--radius-lg); background: rgba(255,255,255,.94); box-shadow: var(--shadow); }
+.section-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 22px; margin-bottom: 22px; }
+.section-head h2, .profile-code h2, .help-section h2 { margin: 5px 0 0; font-size: clamp(1.65rem, 3vw, 2.7rem); line-height: 1.12; letter-spacing: -.045em; }
+.section-head p, .profile-code p { margin: 12px 0 0; color: var(--muted); line-height: 1.7; font-weight: 680; }
+.button { appearance: none; display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 18px; border: 0; border-radius: 999px; color: white; background: var(--blue); font-weight: 950; text-decoration: none; cursor: pointer; transition: transform .18s ease, background .18s ease, box-shadow .18s ease; }
+.button:hover { transform: translateY(-1px); box-shadow: 0 14px 30px rgba(37,99,235,.25); }
+.button--dark { background: #0f172a; white-space: nowrap; }
+.button--dark:hover { background: var(--blue-dark); }
+.button--nexus { background: var(--violet); white-space: nowrap; }
+.button--nexus:hover { background: #6d28d9; }
+.profile-code { display: grid; grid-template-columns: minmax(0,.9fr) minmax(320px,1.1fr); gap: 22px; align-items: center; }
+.code-box { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 16px; border-radius: 22px; background: #0f172a; }
+.code-box code { display: block; min-width: 0; color: #dbeafe; font-weight: 950; line-height: 1.6; overflow-wrap: anywhere; }
+.hint { grid-column: 1 / -1; margin: -6px 0 0; color: var(--muted); font-size: .94rem; }
+.step-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.step-card { min-height: 210px; padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #fffaf2; }
+.step-card span { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; color: white; background: var(--blue); font-weight: 950; }
+.step-card h3 { margin: 18px 0 0; font-size: 1.15rem; line-height: 1.25; }
+.step-card p { margin: 10px 0 0; color: #475569; line-height: 1.65; font-weight: 720; }
+.step-card--accent { background: #eff6ff; border-color: #93c5fd; }
+.visual-section { background: linear-gradient(135deg, #faf5ff, #fff 58%, #f0f9ff); }
+.visual-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.visual-card, .mod-card { position: relative; display: grid; gap: 12px; min-height: 190px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: white; text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.visual-card:hover, .mod-card:hover { transform: translateY(-2px); border-color: #93c5fd; box-shadow: 0 18px 45px rgba(2, 6, 23, .13); }
+.badge-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.badge { width: fit-content; padding: 5px 9px; border-radius: 999px; color: #1e40af; background: #dbeafe; font-size: .76rem; font-weight: 950; }
+.badge--violet { color: #6d28d9; background: #ede9fe; }
+.visual-card h3, .mod-card h3 { margin: 0; font-size: 1.16rem; line-height: 1.28; letter-spacing: -.025em; }
+.visual-card p, .mod-card p { margin: 0; color: #475569; line-height: 1.65; font-weight: 680; }
+.install-example { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 20px; align-items: center; margin-top: 18px; padding: 18px; border: 1px solid #c7d2fe; border-radius: 24px; background: rgba(255,255,255,.8); }
+.install-example h3 { margin: 0; font-size: 1.25rem; }
+.install-example p { margin: 10px 0 0; color: #475569; line-height: 1.65; font-weight: 700; }
+.install-example img { display: block; width: 100%; height: auto; border-radius: 18px; }
+.toolbar { display: grid; gap: 16px; margin-bottom: 20px; }
+.search { display: grid; gap: 7px; color: #334155; font-weight: 950; }
+.search input { width: 100%; min-height: 52px; padding: 0 18px; border: 1px solid var(--line); border-radius: 18px; outline: none; font-weight: 750; }
+.search input:focus { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(37,99,235,.12); }
+.category-tabs { display: flex; flex-wrap: wrap; gap: 9px; }
+.tab { padding: 10px 14px; border: 1px solid var(--line); border-radius: 999px; color: #334155; background: white; font-weight: 900; cursor: pointer; }
+.tab[aria-pressed="true"] { color: white; background: var(--blue); border-color: var(--blue); }
+.mod-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.mod-card { min-height: 310px; }
+.mod-card__top { display: flex; gap: 14px; align-items: center; }
+.mod-icon { width: 66px; height: 66px; flex: 0 0 66px; display: grid; place-items: center; border-radius: 18px; overflow: hidden; background: linear-gradient(135deg, #172554, #0f172a); color: white; font-weight: 950; }
+.mod-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mod-card__name h3 { margin: 0; }
+.mod-card__name small { display: block; margin-top: 4px; color: var(--muted); font-size: .78rem; overflow-wrap: anywhere; }
+.mod-card__effect { padding: 12px; border-radius: 16px; background: #f8fafc; color: #334155 !important; }
+.server-summary { display: grid; gap: 6px; padding: 12px; border-radius: 16px; background: #eff6ff; }
+.server-summary strong { color: #1d4ed8; }
+.server-summary ul { margin: 0; padding-left: 18px; color: #334155; line-height: 1.55; font-weight: 720; }
+.mod-card__link { margin-top: auto; color: var(--blue-dark); font-weight: 950; }
+.empty { padding: 24px; border-radius: var(--radius); background: #f8fafc; color: var(--muted); font-weight: 900; text-align: center; }
+.help-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 20px; }
+.help-grid article { display: grid; gap: 8px; padding: 20px; border-radius: var(--radius); background: #eff6ff; }
+.help-grid strong { color: #1d4ed8; }
+.help-grid span { color: #475569; line-height: 1.65; font-weight: 700; }
+.contact { margin: 20px 0 0; padding: 18px; border-radius: 22px; color: white; background: linear-gradient(135deg, var(--blue), var(--violet)); font-size: 1.2rem; font-weight: 950; text-align: center; }
+.footer { padding: 28px 0 44px; color: #cbd5e1; background: #081326; }
+.footer .container { display: flex; justify-content: space-between; gap: 12px; }
+@media (max-width: 1180px) {
+  .hero__inner, .profile-code { grid-template-columns: 1fr; }
+  .step-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mod-grid, .visual-grid, .help-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .install-example { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .container { width: min(100% - 22px, 1500px); }
+  .hero { padding-top: 34px; }
+  .hero__panel { padding: 20px; }
+  .section-card { padding: 20px; border-radius: 24px; }
+  .section-head { display: grid; }
+  .profile-code { gap: 16px; }
+  .code-box { grid-template-columns: 1fr; }
+  .step-grid, .mod-grid, .visual-grid, .help-grid { grid-template-columns: 1fr; }
+  .step-card { min-height: unset; }
+  .footer .container { display: grid; }
+}
+
 </style>
 </head>
 <body>
@@ -15,12 +128,12 @@
       <div>
         <p class="eyebrow">Valheim Dedicated Server Guide</p>
         <h1>발헤임 서버<br/>모드 적용 가이드</h1>
-        <p class="hero__lead">업로드한 config 기준으로 실제 적용값을 설명하는 HTML 카드형 안내입니다. 모드 아이콘, 검색, 카테고리 필터, 비주얼 패치 설치 위치를 포함했습니다.</p>
+        <p class="hero__lead">일반 유저는 모드를 하나씩 설치하지 않고, 넬이 공유한 r2modman 프로필 코드를 가져와 한 번에 맞춥니다.</p>
       </div>
       <aside class="hero__panel">
         <strong>일반 유저용</strong>
         <span>r2modman 프로필 코드 Import 방식</span>
-        <span class="hero__count">24개 기능/커스텀 모드 + 6개 비주얼 패치</span>
+        <span class="hero__count">24개 기능 모드 + 3개 비주얼 패치</span>
       </aside>
     </div>
   </header>
@@ -62,15 +175,18 @@
       <div class="section-head">
         <div>
           <p class="section-kicker">Visual Patch Links</p>
-          <h2>비주얼 모드 다운로드 및 설치 위치</h2>
-          <p>비주얼 패치는 선택 설치입니다. 아래 경로는 r2modman의 <strong>Settings → Browse profile folder</strong>로 연 프로필 폴더 기준입니다.</p>
+          <h2>비주얼 모드 다운로드 사이트</h2>
+          <p>계절 관련 모드는 r2modman 프로필에 포함하는 쪽으로 정리하고, Nexus 별도 설치 항목은 아래 3개만 남겼습니다.</p>
         </div>
         <a class="button button--nexus" href="https://www.nexusmods.com/valheim" target="_blank" rel="noreferrer">Nexus Valheim 열기</a>
       </div>
       <div class="visual-grid" id="visualGrid"></div>
-      <div class="notice">
-        <strong>설치 주의</strong>
-        <p>셰이더/텍스처 파일은 r2modman 프로필 코드에 포함되지 않을 수 있습니다. 모드 페이지 설명 또는 넬이 안내한 경로에 맞춰 복사하세요.</p>
+      <div class="install-example">
+        <div>
+          <h3>비주얼 모드 설치 위치 예시</h3>
+          <p>긴 경로를 직접 입력하지 말고, r2modman에서 <strong>Settings → Browse profile folder</strong>로 프로필 폴더를 연 뒤 이미지 흐름대로 배치하세요.</p>
+        </div>
+        <img src="./assets/visual-install-example.svg" alt="비주얼 모드 설치 위치 예시" />
       </div>
     </section>
 
@@ -78,8 +194,8 @@
       <div class="section-head">
         <div>
           <p class="section-kicker">Mod Details</p>
-          <h2>적용 모드 상세 설명 · 실제 설정값 기준</h2>
-          <p>업로드한 config.zip을 기준으로 유저가 체감할 핵심 설정값을 정리했습니다. 각 카드의 “설정값 보기”를 누르면 실제 적용값이 펼쳐집니다.</p>
+          <h2>적용 모드 상세 설명</h2>
+          <p>모드 아이콘, 역할, 실제 설정 기반 유저 체감을 카드로 정리했습니다. 설정 펼침 UI는 제거했습니다.</p>
         </div>
         <a class="button button--dark" href="https://thunderstore.io/c/valheim/" target="_blank" rel="noreferrer">Thunderstore Valheim 열기</a>
       </div>
@@ -87,7 +203,7 @@
       <div class="toolbar">
         <label class="search">
           <span>검색</span>
-          <input id="modSearch" type="search" placeholder="예: 상자, 포탈, 사망, 캐릭터, 무게" />
+          <input id="modSearch" type="search" placeholder="예: 지도, Azu, 포탈, 무게" />
         </label>
         <div class="category-tabs" id="categoryTabs"></div>
       </div>
@@ -113,7 +229,7 @@
   <footer class="footer">
     <div class="container">
       <strong>Valheim 서버 모드 가이드</strong>
-      <span>config.zip 기준 생성 · GitHub Pages 정적 웹페이지용</span>
+      <span>GitHub Pages 정적 웹페이지용</span>
     </div>
   </footer>
 
@@ -127,7 +243,6 @@
       "필수",
       "로더"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/denikson-BepInExPack_Valheim-5.4.2333.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/denikson/BepInExPack_Valheim/",
     "desc": "발헤임 모드를 불러오기 위한 기본 모드 로더입니다.",
     "effect": "일반 유저가 직접 건드릴 설정은 거의 없습니다. 다른 모드들이 정상적으로 로드되는 기반입니다.",
@@ -144,6 +259,10 @@
         "유저 안내",
         "프로필에 포함되어 있으면 별도 조작 불필요"
       ]
+    ],
+    "iconPath": "./assets/icons/denikson-BepInExPack_Valheim.png",
+    "settingSummary": [
+      "로그: 콘솔/디스크 로그 활성화"
     ]
   },
   {
@@ -154,7 +273,6 @@
       "의존성",
       "라이브러리"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/ValheimModding-Jotunn-2.24.3.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/ValheimModding/Jotunn/",
     "desc": "여러 발헤임 모드가 공통으로 사용하는 모딩 라이브러리입니다.",
     "effect": "기능 모드가 요구하는 기반 라이브러리입니다. 유저가 직접 조작할 기능은 거의 없습니다.",
@@ -167,7 +285,9 @@
         "유저 안내",
         "프로필에 포함되어 있으면 그대로 유지"
       ]
-    ]
+    ],
+    "iconPath": "./assets/icons/ValheimModding-Jotunn.png",
+    "settingSummary": []
   },
   {
     "id": "ValheimModding-YamlDotNet",
@@ -177,7 +297,6 @@
       "의존성",
       "YAML"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/ValheimModding-YamlDotNet-16.3.1.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/ValheimModding/YamlDotNet/",
     "desc": "YAML 설정 파일을 읽는 데 필요한 의존성 모드입니다.",
     "effect": "Custom Raids, Azu 계열 YAML 설정을 읽기 위한 보조 구성요소입니다.",
@@ -190,7 +309,9 @@
         "유저 안내",
         "삭제하면 YAML 기반 모드가 깨질 수 있음"
       ]
-    ]
+    ],
+    "iconPath": "./assets/icons/ValheimModding-YamlDotNet.png",
+    "settingSummary": []
   },
   {
     "id": "Azumatt-AzuCraftyBoxes",
@@ -201,7 +322,6 @@
       "상자",
       "QoL"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuCraftyBoxes-1.8.14.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuCraftyBoxes/",
     "desc": "제작/건축 시 주변 상자의 재료를 자동으로 참조합니다.",
     "effect": "재료를 손에 들고 있지 않아도 20m 범위의 보관함 재료를 사용해 제작할 수 있습니다.",
@@ -234,6 +354,12 @@
         "Fill All 보조키",
         "LeftShift"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuCraftyBoxes.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "모드 활성화: On",
+      "상자 참조 범위: Container Range = 20"
     ]
   },
   {
@@ -245,7 +371,6 @@
       "상자",
       "자동보관"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuAutoStore-3.0.14.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuAutoStore/",
     "desc": "떨어진 아이템 또는 인벤토리 아이템을 주변 상자로 자동 정리합니다.",
     "effect": "마침표(.)로 주변 5m 상자에 빠르게 보관하고, 이미 같은 아이템이 있는 상자 위주로 정리됩니다.",
@@ -302,6 +427,12 @@
         "즐겨찾기 보조키",
         "Z"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuAutoStore.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "드롭 아이템 자동 수집: Chests Pickup From Ground = On",
+      "기존 아이템 있는 상자 기준: Must Have Existing Item To Pull = On"
     ]
   },
   {
@@ -365,6 +496,12 @@
         "Quick Trash 확인창",
         "On"
       ]
+    ],
+    "iconPath": "./assets/icons/Goldenrevolver-Quick_Stack_Store_Sort_Trash_Restock.png",
+    "settingSummary": [
+      "빠른 보관 범위: QuickStackToNearbyRange = 10",
+      "빠른 보관 단축키: P",
+      "핫바 보관 제외: QuickStackIncludesHotkeyBar = false"
     ]
   },
   {
@@ -376,7 +513,6 @@
       "재활용",
       "회수"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-Recycle_N_Reclaim-1.3.14.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/Recycle_N_Reclaim/",
     "desc": "아이템을 재활용하거나 제작 재료 일부를 회수할 수 있습니다.",
     "effect": "회수 탭/컨테이너 회수를 통해 제작 재료의 50%를 돌려받습니다. 인벤토리 직접 재활용은 관리자 잠금입니다.",
@@ -413,6 +549,12 @@
         "되돌리기",
         "Ctrl + Z, 20초"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-Recycle_N_Reclaim.png",
+    "settingSummary": [
+      "인벤토리 재활용: Enabled = On / Lock to Admin = On",
+      "회수율: RecyclingRate = 0.5",
+      "정확한 제작대 필요: RequireExactCraftingStationForRecycling = On"
     ]
   },
   {
@@ -424,7 +566,6 @@
       "건축",
       "QoL"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuAreaRepair-1.1.6.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuAreaRepair/",
     "desc": "망치 수리 기능을 범위 수리로 확장합니다.",
     "effect": "망치로 수리할 때 주변 15m 구조물을 함께 수리해 기지 보수가 빨라집니다.",
@@ -445,6 +586,12 @@
         "수리 반경",
         "15m"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuAreaRepair.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "범위 수리: On",
+      "수리 반경: 15m"
     ]
   },
   {
@@ -456,7 +603,6 @@
       "장비슬롯",
       "퀵슬롯"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/Azumatt-AzuExtendedPlayerInventory-2.4.1.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/Azumatt/AzuExtendedPlayerInventory/",
     "desc": "인벤토리, 장비 슬롯, 퀵슬롯을 확장합니다.",
     "effect": "인벤토리가 2줄 늘어나고, 장비칸/퀵슬롯 4개/위시본·위습라이트 전용 슬롯을 사용할 수 있습니다.",
@@ -497,6 +643,12 @@
         "퀵슬롯 키",
         "Alt+Z, Alt+X, Alt+C, Alt+V"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-AzuExtendedPlayerInventory.png",
+    "settingSummary": [
+      "추가 인벤토리 줄: 2줄",
+      "장비 전용 행: On",
+      "장비 별도 패널: On"
     ]
   },
   {
@@ -535,6 +687,12 @@
         "원래 스택 보기",
         "LeftAlt"
       ]
+    ],
+    "iconPath": "./assets/icons/shudnal-ItemStacksItemWeights.png",
+    "settingSummary": [
+      "서버 설정 잠금: true",
+      "전역 스택 배율: 2배",
+      "전역 무게 배율: 0.85배"
     ]
   },
   {
@@ -582,6 +740,12 @@
         "카트 부착 거리",
         "5m"
       ]
+    ],
+    "iconPath": "./assets/icons/Searica-SkilledCarryWeight.png",
+    "settingSummary": [
+      "적용 스킬: Jump, Pickaxes, Ride, Run, Sneak, Swim, WoodCutting",
+      "스킬 계수: 0.25",
+      "카트 무게 영향: On"
     ]
   },
   {
@@ -637,6 +801,12 @@
         "수리",
         "홀드 수리 On"
       ]
+    ],
+    "iconPath": "./assets/icons/shudnal-MyLittleUI.png",
+    "settingSummary": [
+      "서버 설정 잠금: true",
+      "상자 이름/내용 표시: On / 11줄",
+      "제련기 정보: 예상 시간, 연료, 대기열 표시"
     ]
   },
   {
@@ -692,6 +862,12 @@
         "운반 비용",
         "10 / 용의 알은 비용 제외"
       ]
+    ],
+    "iconPath": "./assets/icons/OdinPlus-TeleportEverything.png",
+    "settingSummary": [
+      "모드 활성화: true",
+      "서버 설정 강제: true",
+      "포탈 활성 범위: 5m"
     ]
   },
   {
@@ -723,6 +899,12 @@
         "포탈 소용돌이 숨김",
         "false"
       ]
+    ],
+    "iconPath": "./assets/icons/GemHunter1-FastTeleport.png",
+    "settingSummary": [
+      "모드 활성화: true",
+      "카메라 암전 제거: false",
+      "포탈 소용돌이 숨김: false"
     ]
   },
   {
@@ -757,6 +939,12 @@
         "와드 안에서 끄기",
         "Off"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-Where_You_At.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "공개 토글 방지: On",
+      "관리자 예외: On"
     ]
   },
   {
@@ -784,6 +972,10 @@
         "유저 안내",
         "지도 공유 관련 기능은 서버에서 테스트 후 필요 시 설정 추가"
       ]
+    ],
+    "iconPath": "./assets/icons/nbusseneau-Better_Cartography_Table.png",
+    "settingSummary": [
+      "적용 방식: 프로필 포함 / 기본 설정 사용"
     ]
   },
   {
@@ -843,6 +1035,12 @@
         "나무 성장 시간",
         "대부분 3000초"
       ]
+    ],
+    "iconPath": "./assets/icons/Advize-PlantEverything.png",
+    "settingSummary": [
+      "서버 설정 잠금: true",
+      "기타 식물/잔해: EnableMiscFlora = true / EnableDebris = true",
+      "추가 자원: false"
     ]
   },
   {
@@ -866,6 +1064,10 @@
         "비 피해 제거",
         "RemoveRainDamage = true"
       ]
+    ],
+    "iconPath": "./assets/icons/NotActuallyMine-FloorsAreRoofs.png",
+    "settingSummary": [
+      "비 피해 제거: RemoveRainDamage = true"
     ]
   },
   {
@@ -912,6 +1114,12 @@
         "팝업 자동 선택",
         "Ask"
       ]
+    ],
+    "iconPath": "./assets/icons/Azumatt-SleepSkip.png",
+    "settingSummary": [
+      "서버 설정 잠금: On",
+      "필요 비율: 50%",
+      "최소 필요 인원: 1명"
     ]
   },
   {
@@ -963,6 +1171,12 @@
         "제작/채집/건축 보상",
         "0.8 / 0.1 / 0.5"
       ]
+    ],
+    "iconPath": "./assets/icons/MidnightMods-Deathlink.png",
+    "settingSummary": [
+      "현재 선택지: Casual",
+      "장비 보존: minEquipmentKept = 3 / maxEquipmentKept = 3",
+      "스킬 손실: 2% ~ 5%"
     ]
   },
   {
@@ -1017,6 +1231,12 @@
         "Ragnarok",
         "Enabled = false"
       ]
+    ],
+    "iconPath": "./assets/icons/ASharpPen-Custom_Raids.png",
+    "settingSummary": [
+      "기존 레이드 제거: false",
+      "동명 이벤트 덮어쓰기: true",
+      "레이드 체크 간격: 46분"
     ]
   },
   {
@@ -1063,6 +1283,12 @@
         "게임패드 키",
         "JoystickButton2"
       ]
+    ],
+    "iconPath": "./assets/icons/ValheimValkream-EmoteWheelReworked.png",
+    "settingSummary": [
+      "모드 활성화: true",
+      "단축키: T",
+      "키 놓을 때 실행: true"
     ]
   },
   {
@@ -1090,6 +1316,10 @@
         "유저 안내",
         "외형 데이터 손상 방지를 위해 참여자 전원 설치 권장"
       ]
+    ],
+    "iconPath": "./assets/icons/Balrond-balrond_character_customization.png",
+    "settingSummary": [
+      "적용 방식: 프로필에 모드 추가"
     ]
   },
   {
@@ -1101,7 +1331,6 @@
       "머리",
       "수염"
     ],
-    "iconUrl": "https://gcdn.thunderstore.io/live/repository/icons/ComfyMods-DyeHard-1.6.0.png.128x128_q95.png",
     "link": "https://thunderstore.io/c/valheim/p/ComfyMods/DyeHard/",
     "desc": "캐릭터 머리/수염 타입과 색상을 클라이언트에서 조정합니다.",
     "effect": "F1 ConfigurationManager에서 DyeHard 설정을 열어 머리와 수염 색상/스타일을 바꿀 수 있습니다.",
@@ -1122,6 +1351,12 @@
         "주의",
         "외형 표시용이며 플레이어 데이터 자체를 직접 변경하지 않는 방식"
       ]
+    ],
+    "iconPath": "./assets/icons/ComfyMods-DyeHard.png",
+    "settingSummary": [
+      "적용 방식: 프로필에 모드 추가",
+      "사용 방법: F1 → ConfigurationManager → DyeHard",
+      "주의: 외형 표시용이며 플레이어 데이터 자체를 직접 변경하지 않는 방식"
     ]
   }
 ];
@@ -1129,55 +1364,152 @@
   {
     "name": "Badgers Shading Overhaul",
     "tag": "Shader",
+    "desc": "조명, 색감, 렌더링 분위기를 개선하는 선택 비주얼 패치입니다.",
     "link": "https://www.nexusmods.com/valheim/mods/2366",
-    "desc": "조명/렌더링의 거친 색 띠를 줄이고 자연스러운 분위기를 만드는 셰이더 개선 패치입니다.",
-    "install": "압축 해제 후 내용물을 r2modman 프로필의 BepInEx/plugins 폴더에 넣습니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\plugins"
+    "install": "프로필 폴더를 열고 BepInEx > plugins 안에 압축 해제 내용을 배치합니다."
   },
   {
     "name": "Willybach’s HD Valheim 2.0",
     "tag": "Texture",
+    "desc": "바닐라 느낌을 유지하면서 대부분의 텍스처를 고해상도로 개선합니다.",
     "link": "https://www.nexusmods.com/valheim/mods/1030",
-    "desc": "바닐라 분위기를 유지하면서 전반적인 텍스처를 고해상도로 바꿉니다.",
-    "install": "압축 해제 후 Custom Textures 폴더를 HDValheimTexturesData 아래에 넣습니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\plugins\\HDValheimTexturesData\\Custom Textures"
+    "install": "HDValheimTexturesData 폴더 구조를 유지해서 Custom Textures가 올바른 위치에 들어가게 배치합니다."
   },
   {
     "name": "Badgers HD Terrain 2.0",
     "tag": "Terrain",
+    "desc": "지형 텍스처와 조명, 날씨 표현을 개선하는 선택 비주얼 패치입니다.",
     "link": "https://www.nexusmods.com/valheim/mods/2887",
-    "desc": "지형 텍스처와 바이옴 블렌딩, 날씨/조명 표현을 개선합니다.",
-    "install": "압축 해제 후 ValheimHDTerrain.dll과 HDTerrainData 폴더가 BepInEx/plugins 안에 들어가게 배치합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\plugins"
-  },
-  {
-    "name": "Seasonality",
-    "tag": "Season",
-    "link": "https://thunderstore.io/c/valheim/p/RustyMods/Seasonality/",
-    "desc": "인게임 시간에 따라 계절 색감과 텍스처 변화를 적용합니다.",
-    "install": "r2modman 프로필에 기능 모드로 설치합니다. 텍스처 팩은 아래 Textures 경로에 배치합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\config\\Seasonality\\Textures"
-  },
-  {
-    "name": "Seasonality HD Texture Pack",
-    "tag": "Season Texture",
-    "link": "https://thunderstore.io/c/valheim/p/RustyMods/Seasonality_HD_Texture_Pack/",
-    "desc": "Seasonality가 사용할 HD 텍스처 팩입니다.",
-    "install": "텍스처 파일 경로가 BepInEx/config/Seasonality/Textures가 되도록 배치합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\config\\Seasonality\\Textures"
-  },
-  {
-    "name": "Willybachs HD Seasonality",
-    "tag": "Season HD",
-    "link": "https://www.nexusmods.com/valheim/mods/2635",
-    "desc": "Willybach HD Valheim과 Seasonality를 함께 쓰기 위한 계절별 HD 텍스처입니다.",
-    "install": "압축 안의 WillybachHD 텍스처 폴더를 Seasonality Textures 폴더 아래에 배치합니다. 포함된 Seasonality 설정 파일이 있다면 BepInEx/config에 적용합니다.",
-    "path": "%APPDATA%\\r2modmanPlus-local\\Valheim\\profiles\\<프로필명>\\BepInEx\\config\\Seasonality\\Textures\\WillybachHD"
+    "install": "프로필 폴더를 열고 BepInEx > plugins 안에 압축 해제 내용을 배치합니다."
   }
 ];
   </script>
   <script>
-const mods=window.VALHEIM_MODS||[],visuals=window.VALHEIM_VISUALS||[];const modGrid=document.querySelector("#modGrid"),visualGrid=document.querySelector("#visualGrid"),searchInput=document.querySelector("#modSearch"),tabs=document.querySelector("#categoryTabs"),emptyState=document.querySelector("#emptyState"),copyBtn=document.querySelector("#copyProfileCode"),profileCode=document.querySelector("#profileCode");let activeCategory="전체";function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}function initials(name){return String(name||"?").split(/[_\s-]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase()}function iconHtml(mod){const label=initials(mod.display);if(mod.iconUrl){return `<div class="mod-icon"><img src="${esc(mod.iconUrl)}" alt="${esc(mod.display)} 아이콘" loading="lazy" onerror="this.parentElement.textContent='${esc(label)}';this.remove();"></div>`}return `<div class="mod-icon">${esc(label)}</div>`}function uniqueCategories(){return["전체",...Array.from(new Set(mods.map(e=>e.category)))]}function renderVisuals(){visualGrid&&(visualGrid.innerHTML=visuals.map(e=>`<a class="visual-card" href="${esc(e.link)}" target="_blank" rel="noreferrer"><div class="badge-row"><span class="badge badge--violet">${esc(e.tag)}</span></div><h3>${esc(e.name)}</h3><p>${esc(e.desc)}</p><p><strong>설치:</strong> ${esc(e.install)}</p><p class="visual-path"><code>${esc(e.path)}</code></p><span class="mod-card__link">다운로드 페이지 열기 ↗</span></a>`).join(""))}function renderTabs(){tabs&&(tabs.innerHTML=uniqueCategories().map(e=>`<button class="tab" type="button" data-category="${esc(e)}" aria-pressed="${e===activeCategory}">${esc(e)}</button>`).join(""),tabs.querySelectorAll(".tab").forEach(e=>{e.addEventListener("click",()=>{activeCategory=e.dataset.category,renderTabs(),renderMods()})}))}function filterMods(){const e=(searchInput?.value||"").trim().toLowerCase();return mods.filter(t=>{const r=activeCategory==="전체"||t.category===activeCategory,n=`${t.id} ${t.display} ${t.category} ${t.tags.join(" ")} ${t.desc} ${t.effect} ${t.settings?.flat?.().join(" ")||""}`.toLowerCase();return r&&(!e||n.includes(e))})}function settingsHtml(mod){const rows=(mod.settings||[]).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("");return `<div class="settings-table" id="settings-${esc(mod.id)}"><dl>${rows}</dl></div>`}function renderMods(){if(!modGrid)return;const list=filterMods();emptyState.hidden=list.length!==0;modGrid.innerHTML=list.map(mod=>`<article class="mod-card"><div class="mod-card__top">${iconHtml(mod)}<div class="mod-card__name"><h3>${esc(mod.display)}</h3><small>${esc(mod.id)}</small></div></div><div class="badge-row"><span class="badge">${esc(mod.category)}</span>${mod.tags.map(tag=>`<span class="badge">${esc(tag)}</span>`).join("")}</div><p>${esc(mod.desc)}</p><p class="mod-card__effect"><strong>유저 체감:</strong> ${esc(mod.effect)}</p><button class="details-btn" type="button" data-target="settings-${esc(mod.id)}">설정값 보기</button>${settingsHtml(mod)}<a class="mod-card__link" href="${esc(mod.link)}" target="_blank" rel="noreferrer">모드 페이지 열기 ↗</a></article>`).join("");modGrid.querySelectorAll(".details-btn").forEach(btn=>btn.addEventListener("click",()=>{const panel=document.getElementById(btn.dataset.target);panel?.classList.toggle("open");btn.textContent=panel?.classList.contains("open")?"설정값 닫기":"설정값 보기"}))}function copyText(e){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(e);const t=document.createElement("textarea");return t.value=e,t.style.position="fixed",t.style.left="-9999px",document.body.appendChild(t),t.focus(),t.select(),document.execCommand("copy"),t.remove(),Promise.resolve()}copyBtn?.addEventListener("click",async()=>{const e=profileCode?.textContent?.trim()||"";if(!e||e.includes("여기에"))return copyBtn.textContent="코드 입력 필요",void setTimeout(()=>copyBtn.textContent="코드 복사",1500);try{await copyText(e);copyBtn.textContent="복사 완료!"}catch{copyBtn.textContent="복사 실패"}finally{setTimeout(()=>copyBtn.textContent="코드 복사",1600)}});searchInput?.addEventListener("input",renderMods);renderVisuals();renderTabs();renderMods();
+const mods = window.VALHEIM_MODS || [];
+const visuals = window.VALHEIM_VISUALS || [];
+const modGrid = document.querySelector("#modGrid");
+const visualGrid = document.querySelector("#visualGrid");
+const searchInput = document.querySelector("#modSearch");
+const tabs = document.querySelector("#categoryTabs");
+const emptyState = document.querySelector("#emptyState");
+const copyBtn = document.querySelector("#copyProfileCode");
+const profileCode = document.querySelector("#profileCode");
+let activeCategory = "전체";
+
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[m]));
+}
+function initials(name) {
+  return String(name || "?").split(/[_\s-]+/).filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();
+}
+function iconHtml(mod) {
+  const label = initials(mod.display);
+  if (mod.iconPath) {
+    return `<div class="mod-icon"><img src="${esc(mod.iconPath)}" alt="${esc(mod.display)} 아이콘" loading="lazy" onerror="this.parentElement.textContent='${esc(label)}';this.remove();"></div>`;
+  }
+  return `<div class="mod-icon">${esc(label)}</div>`;
+}
+function uniqueCategories() {
+  return ["전체", ...Array.from(new Set(mods.map((mod) => mod.category)))];
+}
+function renderVisuals() {
+  if (!visualGrid) return;
+  visualGrid.innerHTML = visuals.map((item) => `
+    <a class="visual-card" href="${esc(item.link)}" target="_blank" rel="noreferrer">
+      <div class="badge-row"><span class="badge badge--violet">${esc(item.tag)}</span></div>
+      <h3>${esc(item.name)}</h3>
+      <p>${esc(item.desc)}</p>
+      <p><strong>설치 요약:</strong> ${esc(item.install)}</p>
+      <span class="mod-card__link">다운로드 페이지 열기 ↗</span>
+    </a>
+  `).join("");
+}
+function renderTabs() {
+  if (!tabs) return;
+  tabs.innerHTML = uniqueCategories().map((category) => `
+    <button class="tab" type="button" data-category="${esc(category)}" aria-pressed="${category === activeCategory}">
+      ${esc(category)}
+    </button>
+  `).join("");
+  tabs.querySelectorAll(".tab").forEach((button) => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.category;
+      renderTabs();
+      renderMods();
+    });
+  });
+}
+function filterMods() {
+  const q = (searchInput?.value || "").trim().toLowerCase();
+  return mods.filter((mod) => {
+    const categoryMatch = activeCategory === "전체" || mod.category === activeCategory;
+    const text = `${mod.id} ${mod.display} ${mod.category} ${mod.tags.join(" ")} ${mod.desc} ${mod.effect} ${(mod.settingSummary || []).join(" ")}`.toLowerCase();
+    return categoryMatch && (!q || text.includes(q));
+  });
+}
+function summaryHtml(mod) {
+  const items = (mod.settingSummary || []).slice(0, 3);
+  if (!items.length) return "";
+  return `<div class="server-summary"><strong>서버 설정 요약</strong><ul>${items.map((item) => `<li>${esc(item)}</li>`).join("")}</ul></div>`;
+}
+function renderMods() {
+  if (!modGrid) return;
+  const list = filterMods();
+  emptyState.hidden = list.length !== 0;
+  modGrid.innerHTML = list.map((mod) => `
+    <article class="mod-card">
+      <div class="mod-card__top">
+        ${iconHtml(mod)}
+        <div class="mod-card__name">
+          <h3>${esc(mod.display)}</h3>
+          <small>${esc(mod.id)}</small>
+        </div>
+      </div>
+      <div class="badge-row">
+        <span class="badge">${esc(mod.category)}</span>
+        ${mod.tags.map((tag) => `<span class="badge">${esc(tag)}</span>`).join("")}
+      </div>
+      <p>${esc(mod.desc)}</p>
+      <p class="mod-card__effect"><strong>유저 체감:</strong> ${esc(mod.effect)}</p>
+      ${summaryHtml(mod)}
+      <a class="mod-card__link" href="${esc(mod.link)}" target="_blank" rel="noreferrer">모드 페이지 열기 ↗</a>
+    </article>
+  `).join("");
+}
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.focus();
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+  return Promise.resolve();
+}
+copyBtn?.addEventListener("click", async () => {
+  const text = profileCode?.textContent?.trim() || "";
+  if (!text || text.includes("여기에")) {
+    copyBtn.textContent = "코드 입력 필요";
+    setTimeout(() => (copyBtn.textContent = "코드 복사"), 1500);
+    return;
+  }
+  try {
+    await copyText(text);
+    copyBtn.textContent = "복사 완료!";
+  } catch {
+    copyBtn.textContent = "복사 실패";
+  } finally {
+    setTimeout(() => (copyBtn.textContent = "코드 복사"), 1600);
+  }
+});
+searchInput?.addEventListener("input", renderMods);
+renderVisuals();
+renderTabs();
+renderMods();
+
 </script>
 </body>
 </html>
