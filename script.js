@@ -10,7 +10,14 @@ const profileCode = document.querySelector("#profileCode");
 let activeCategory = "전체";
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));}
 function initials(name){return String(name||"?").split(/[_\s-]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join("").toUpperCase();}
-function iconHtml(mod){const label=initials(mod.display);if(mod.iconPath){return `<div class="mod-icon"><img src="${esc(mod.iconPath)}" alt="${esc(mod.display)} 아이콘" loading="lazy" onerror="this.parentElement.textContent='${esc(label)}';this.remove();"></div>`;}return `<div class="mod-icon">${esc(label)}</div>`;}
+function iconHtml(mod){
+  const label = initials(mod.display);
+  const src = mod.iconData || mod.iconPath || "";
+  if (src) {
+    return `<div class="mod-icon" aria-label="${esc(mod.display)} 아이콘"><img src="${esc(src)}" alt="" loading="lazy" onerror="this.parentElement.classList.add('mod-icon--fallback');this.parentElement.textContent='${esc(label)}';this.remove();"></div>`;
+  }
+  return `<div class="mod-icon mod-icon--fallback">${esc(label)}</div>`;
+}
 function uniqueCategories(){return ["전체",...Array.from(new Set(mods.map(mod=>mod.category)))];}
 function renderVisuals(){if(!visualGrid)return;visualGrid.innerHTML=visuals.map(item=>`<a class="visual-card" href="${esc(item.link)}" target="_blank" rel="noreferrer"><div class="badge-row"><span class="badge badge--violet">${esc(item.tag)}</span></div><h3>${esc(item.name)}</h3><p>${esc(item.desc)}</p><p><strong>설치 요약:</strong> ${esc(item.install)}</p><span class="mod-card__link">다운로드 페이지 열기 ↗</span></a>`).join("");}
 function renderTabs(){if(!tabs)return;tabs.innerHTML=uniqueCategories().map(category=>`<button class="tab" type="button" data-category="${esc(category)}" aria-pressed="${category===activeCategory}">${esc(category)}</button>`).join("");tabs.querySelectorAll(".tab").forEach(button=>button.addEventListener("click",()=>{activeCategory=button.dataset.category;renderTabs();renderMods();}));}
