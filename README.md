@@ -1,7 +1,17 @@
+# Choromi Valheim Server Guide
+
+GitHub Pages 업로드용 정적 페이지입니다.
+
+## 구성
+
+```text
+index.html
+assets/valheim-hero.jpg
+.nojekyll
+README.md
+```
+
+GitHub 저장소 루트에 그대로 업로드한 뒤, Pages 설정에서 `main` / `/root`를 선택하세요.
 
 
-## v4 서버 접속 정보 추가
-
-- 서버 IP: 15.235.204.14:6120
-- 서버명: Choromi Valheim Server
-- 비밀번호 표시/숨김 및 복사 버튼 포함
+Update: v4 uses the portrait Valheim key art in a split hero layout.
