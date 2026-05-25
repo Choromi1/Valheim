@@ -749,8 +749,19 @@
     }
 
 
+
+    /* v9: remove decorative vertical lines inside step cards */
+    article.install-step::before,
+    .install-step::before,
+    article.join-step::before,
+    .join-step::before {
+      content: none !important;
+      display: none !important;
+    }
+
+
   </style>
-<!-- v8: install flow fixed 2x3 order -->
+<!-- v9: removed install-step pseudo line -->
 </head>
 <body>
   <div class="page">
