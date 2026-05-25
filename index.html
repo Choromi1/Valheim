@@ -683,6 +683,46 @@
     }
 
 
+
+    .profile-code-inline {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 18px;
+      padding: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.045));
+      backdrop-filter: blur(10px);
+    }
+
+    .profile-code-inline code {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
+
+    .inline-label {
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .profile-code-inline {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
   </style>
 </head>
 <body>
@@ -690,7 +730,6 @@
     <nav class="top-nav" aria-label="Page navigation">
       <div class="brand"><span>Choromi Server</span></div>
       <div class="nav-links">
-        <a href="#profile">Profile</a>
         <a href="#install">Install</a>
         <a href="#server">Server</a>
         <a href="#notes">Notes</a>
@@ -715,63 +754,60 @@
     </header>
 
     <main>
-      <section id="profile" aria-labelledby="profile-title">
-        <div class="section-inner">
-          <div class="section-head">
-            <div>
-              <div class="section-kicker">Profile Code</div>
-              <h2 id="profile-title">r2modman Profile Code</h2>
-            </div>
-          </div>
-          <div class="profile-box">
-            <code id="profile-code">019e33f8-53ee-c841-806f-d69fa7040dc4</code>
-            <button class="btn" type="button" id="copy-btn">Copy</button>
-          </div>
-        </div>
-      </section>
 
       <section id="install" aria-labelledby="install-title">
         <div class="section-inner">
           <div class="section-head">
             <div>
               <div class="section-kicker">Install Flow</div>
-              <h2 id="install-title">설치 순서</h2>
-              <p class="lead">기존 프로필을 직접 수정하지 말고, 서버용 프로필을 기준으로 실행해 주세요.</p>
+              <h2 id="install-title">모드 설치 순서</h2>
+              <p class="lead">r2modman 설치부터 프로필 코드 입력까지 한 흐름으로 진행합니다.</p>
             </div>
+            <a class="btn" href="https://thunderstore.io/package/ebkr/r2modman/" target="_blank" rel="noreferrer">r2modman 다운로드</a>
           </div>
-          <div class="install-flow">
-            <article class="install-step">
+
+          <div class="profile-code-inline">
+            <div>
+              <div class="inline-label">r2modman 프로필 코드</div>
+              <code id="profile-code">019e33f8-53ee-c841-806f-d69fa7040dc4</code>
+            </div>
+            <button class="btn small-btn" id="copy-btn" type="button">Copy Profile Code</button>
+          </div>
+
+          <div class="install-grid">
+            <article class="install-card">
               <div class="step-index">01</div>
-              <div>
-                <h3>r2modman에서 Valheim 선택</h3>
-                <p>개인 프로필을 수정하지 말고, 서버 접속용 프로필을 새로 가져올 준비를 합니다.</p>
-              </div>
+              <h3>Valheim 1회 실행</h3>
+              <p>Steam에서 발헤임을 한 번 실행해 기본 폴더를 생성합니다.</p>
             </article>
-            <article class="install-step">
+            <article class="install-card">
               <div class="step-index">02</div>
-              <div>
-                <h3>Import / Update → From Code</h3>
-                <p>Profile Code를 붙여넣어 서버와 동일한 모드 구성을 생성합니다. 모드 구성이 바뀌면 기존 프로필을 고치지 말고 다시 Import해 주세요.</p>
-              </div>
+              <h3>r2modman 설치</h3>
+              <p>Thunderstore에서 r2modman을 설치하고 실행합니다.</p>
             </article>
-            <article class="install-step">
+            <article class="install-card">
               <div class="step-index">03</div>
-              <div>
-                <h3>Start modded로 실행</h3>
-                <p>Steam에서 바로 실행하거나 Start vanilla를 누르면 모드가 로드되지 않을 수 있습니다.</p>
-              </div>
+              <h3>Valheim 선택</h3>
+              <p>Valheim Dedicated Server가 아닌 Valheim을 선택합니다.</p>
             </article>
-            <article class="install-step">
+            <article class="install-card">
               <div class="step-index">04</div>
-              <div>
-                <h3>접속 후 기본 기능 확인</h3>
-                <p>인벤토리 확장, 퀵슬롯, 지도 핀, 포탈 이동, 창고 정리 기능이 정상인지 확인합니다.</p>
-              </div>
+              <h3>Import / Update</h3>
+              <p>프로필 화면에서 Import / Update를 클릭합니다.</p>
+            </article>
+            <article class="install-card accent-card">
+              <div class="step-index">05</div>
+              <h3>From code 입력</h3>
+              <p>Import new profile → From code를 선택하고 위 프로필 코드를 붙여넣습니다.</p>
+            </article>
+            <article class="install-card">
+              <div class="step-index">06</div>
+              <h3>Start modded 실행</h3>
+              <p>모드 설치가 끝나면 Steam 일반 실행이 아니라 Start modded로 실행합니다.</p>
             </article>
           </div>
         </div>
       </section>
-
 
       <section id="server" aria-labelledby="server-title">
         <div class="section-inner">
